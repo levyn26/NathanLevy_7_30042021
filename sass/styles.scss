@@ -1,4 +1,5 @@
 @import './libs/reset.scss';
+@import './libs/responsive.scss';
 
 
 .header{
@@ -6,98 +7,208 @@
 }
 
 body{
-    padding: 3vh 0;
+    padding: 3vh 100px;
+    font-family: 'Lato', sans-serif;;
 }
 
 
-.search {
-    width: 100%;
-    position: relative;
-    display: flex;
-  }
-  
-  .searchTerm {
-    width: 1240px;
-    height: 69px;
-    padding: 5px;
-    height: 20px;
-    background: #E7E7E7;
-    border-radius: 5px;
-    outline: none;
-    color: #9DBFAF;
-  }
-  
-  .searchTerm:focus{
-    color: #00B4CC;
-  }
-  
-  .searchButton {
-    width: 40px;
-    height: 36px;
-    border: 1px solid #00B4CC;
-    background: #00B4CC;
-    text-align: center;
-    color: #fff;
-    border-radius: 0 5px 5px 0;
-    cursor: pointer;
-    font-size: 20px;
-  }
-  
 
-  .navigation {
-      margin-top: 2vh;
-      display: flex;
-      justify-content: center;
+:root {
+  --rad: .7rem;
+  --dur: .3s;
+  --color-dark: #2f2f2f;
+  --color-light: #E7E7E7;
+  --color-brand: #E7E7E7;
+  --font-fam: 'Lato', sans-serif;
+  --height: 4.5rem;
+  --btn-width: 6rem;
+  --bez: cubic-bezier(0, 0, 0.43, 1.49);
+}
+
+  // Main styles
+form {
+  margin-top: 2vh!important;
+  position: relative;
+  width: 100%;
+  background: var(--color-brand);
+  border-radius: var(--rad);
+  margin: auto;
+}
+input, button {
+  height: var(--height);
+  font-family: var(--font-fam);
+  border: 0;
+  color: var(--color-dark);
+  font-size: 1.1rem;
+}
+input[type="search"] {
+  outline: 0; // <-- shold probably remove this for better accessibility, adding for demo aesthetics for now.
+  width: 100%;
+  background: var(--color-light);
+  padding: 0 1.6rem;
+  border-radius: var(--rad);
+  appearance: none; //for iOS input[type="search"] roundedness issue. border-radius alone doesn't work
+  transition: all var(--dur) var(--bez);
+  transition-property: width, border-radius;
+  z-index: 1;
+  position: relative;
+}
+button {
+  display: none; // prevent being able to tab to it
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: var(--btn-width);
+  font-weight: bold;
+  background: var(--color-brand);
+  border-radius: 0 var(--rad) var(--rad) 0;
+}
+input:not(:placeholder-shown) {
+  border-radius: var(--rad) 0 0 var(--rad);
+  width: calc(100% - var(--btn-width));
+  + button {
+    display: block;
   }
+}
+label {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
 
 
-  
-  form {
-    outline: 0;
-    float: left;
-    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-    -webkit-border-radius: 4px;
-    border-radius: 4px;
+.ingredients{
+  margin-right: 1.5vh;
+  margin-top: 1.5vh;
+  transition: .1s ease-in-out;
+  width: 170px;
+  height: 69px;
+  border-radius: 5px;
+  background-color: #3282F7;
+  display: flex;
+  &:hover{
+    opacity: .8;
   }
-  
-  form > .textbox {
-      font-size: 18px;
-    outline: 0;
-    width: 1240px;
-    height: 69px;
-    line-height: 42px;
-    padding: 0 16px;
-    background-color:  #E7E7E7;
-    color: #000000;
-    border: 0;
-    float: left;
-    -webkit-border-radius: 4px 0 0 4px;
-    border-radius: 4px 0 0 4px;
+}
+
+.appareil{
+  margin-right: 2vh;
+  margin-top: 1.5vh;
+  transition: .1s ease-in-out;
+  width: 170px;
+  height: 69px;
+  border-radius: 5px;
+  background-color: #68D9A4;
+  display: flex;
+  &:hover{
+    opacity: .8;
   }
-  
-  form > .textbox:focus {
-    outline: 0;
-    background-color: #FFF;
+}
+
+.ustensiles{
+  margin-right: 2vh;
+  margin-top: 1.5vh;
+  transition: .1s ease-in-out;
+  width: 170px;
+  height: 69px;
+  border-radius: 5px;
+  background-color: #ED6454;
+;
+  display: flex;
+  &:hover{
+    opacity: .8;
   }
-  
-  form > .button {
-    outline: 0;
-    background: none;
-    background-color:  #E7E7E7;
-    float: left;
-    height: 69px;
-    width: 100  px;
-    text-align: center;
-    line-height: 42px;
-    border: 0;
-    color: #000000;
-    font: normal normal normal 14px/1 FontAwesome;
-    font-size: 16px;
-    text-rendering: auto;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-    -webkit-transition: background-color .4s ease;
-    transition: background-color .4s ease;
-    -webkit-border-radius: 0 4px 4px 0;
-    border-radius: 0 4px 4px 0;
+}
+
+.ingredients{
+  margin-right: 2vh;
+  margin-top: 1.5vh;
+  transition: .1s ease-in-out;
+  width: 170px;
+  height: 69px;
+  border-radius: 5px;
+  background-color: #3282F7;
+  display: flex;
+  &:hover{
+    opacity: .8;
   }
+}
+
+.filter{
+  display: flex;
+}
+
+.filterText{
+  font-weight: 500;
+  font-size: 18px;
+  color: #FFFFFF;
+  margin: auto;
+}
+
+.filterIcon{
+  margin: auto;
+}
+
+main{
+  margin-top: 2vh ;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 30px 30px;
+}
+
+.cards{
+  height: 364px;
+  background: #E7E7E7;
+  border-radius: 5px;
+  width: 380px;
+}
+
+.cards img{
+  border-radius: 5px 5px 0px 0px;
+}
+
+.titleAndTime{
+  display: flex;
+  margin: auto;
+  padding: 2vh;
+  justify-content: space-between;
+}
+
+.cardsTitle{
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.time{
+  display: flex;
+}
+
+.timeTitle{
+  margin-left: .5vh;
+  font-size: 18px;
+  font-weight: 500;
+
+}
+
+.ingredientsWithDesc{
+  padding: .1vh 2vh;
+
+}
+
+.ingredientsList{
+  font-size: 12px;
+  line-height: 14px;
+  color: #000;
+  width: 171px;
+}
+
+.description{
+  margin-left: 1.5vh;
+  font-size: 12px;
+  width: 171px;
+}

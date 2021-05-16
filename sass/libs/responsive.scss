@@ -1,0 +1,53 @@
+// X-Small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) { 
+    .cards img{
+        object-fit: cover!important;
+        width: 100%;
+    }
+
+    main{
+        grid-template-columns: 1fr!important;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr!important;
+    }
+ }
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) { 
+    body{
+        padding: 2vh 10px!important;
+    }
+    .cards{
+        width: 100%!important;
+        height: 110%!important;
+
+    }
+
+    input, button {
+        font-size: 14px!important;
+      }
+
+    input[type="search"] {
+        padding: 0 10px!important;
+    }
+
+    main{
+        grid-template-columns: 1fr!important;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr!important;
+        gap: 55px 30px!important;
+    }
+ }
+
+// Medium devices (tablets, less than 992px)
+@media (max-width: 991.98px) { 
+
+ }
+
+// Large devices (desktops, less than 1200px)
+@media (max-width: 1199.98px) { 
+
+ }
+
+// X-Large devices (large desktops, less than 1400px)
+@media (max-width: 1399.98px) { 
+
+ }
