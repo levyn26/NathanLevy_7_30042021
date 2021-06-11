@@ -1,6 +1,13 @@
 @import './libs/reset.scss';
 @import './libs/responsive.scss';
 
+$light-grey: #e7e7e7;
+$dark-grey: #c7bebe;
+
+$primary-color: #3282f7;
+$secondary-color: #68d9a4;
+$tertiary-color: #ed6454;
+
 
 .header{
     text-align: center;
@@ -82,6 +89,7 @@ label {
 
 
 .ingredients{
+  cursor: pointer;
   margin-right: 1.5vh;
   margin-top: 1.5vh;
   transition: .1s ease-in-out;
@@ -96,6 +104,7 @@ label {
 }
 
 .appareil{
+  cursor: pointer;
   margin-right: 2vh;
   margin-top: 1.5vh;
   transition: .1s ease-in-out;
@@ -110,6 +119,7 @@ label {
 }
 
 .ustensiles{
+  cursor: pointer;
   margin-right: 2vh;
   margin-top: 1.5vh;
   transition: .1s ease-in-out;
@@ -138,6 +148,16 @@ label {
   }
 }
 
+.openIngredients{
+  display: none;
+  position: absolute;
+  width: 43%;
+  height: 345px;
+  background-color: #3282F7;
+  top: 30vh;
+  z-index: 99999;
+}
+
 .filter{
   display: flex;
 }
@@ -154,7 +174,7 @@ label {
 }
 
 main{
-  margin-top: 2vh ;
+  margin-top: 3vh ;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
@@ -162,14 +182,19 @@ main{
 }
 
 .cards{
-  height: 364px;
   background: #E7E7E7;
   border-radius: 5px;
-  width: 380px;
+  padding-bottom: 3vh;
 }
 
 .cards img{
   border-radius: 5px 5px 0px 0px;
+}
+
+.imgHere{
+  background: #C7BEBE;
+  border-radius: 5px 5px 0px 0px;
+  height: 178px;
 }
 
 .titleAndTime{
@@ -197,7 +222,7 @@ main{
 
 .ingredientsWithDesc{
   padding: .1vh 2vh;
-
+  position: relative;
 }
 
 .ingredientsList{
@@ -210,5 +235,186 @@ main{
 .description{
   margin-left: 1.5vh;
   font-size: 12px;
+  position: absolute;
+  right: 12px;
+  top: 3px;
   width: 171px;
+}
+
+
+
+.filters {
+
+  background-color: transparent;
+
+
+  &-elt {
+    display: inline-block;
+    height: 69px;
+    width: 100%;
+    position: relative;
+    margin: 0 0 10px 0;
+    border-radius: 5px;
+
+    &:nth-child(2) {
+      @media (min-width: 600px) {
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+    }
+
+    @media (min-width: 600px) {
+      width: 170px;
+
+      &.scaled {
+        width: 600px;
+      }
+    }
+
+    input {
+      height: 69px;
+      width: 100%;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: 500;
+      padding: 0 40px 0 10px;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &::placeholder {
+        color: #fff;
+      }
+    }
+
+    &:nth-child(1) {
+      background: $primary-color;
+
+      & > div,
+      & > input {
+        background: $primary-color;
+      }
+
+      li:hover {
+        background-color: darken($primary-color, 20%);
+      }
+    }
+
+    &:nth-child(2) {
+      background: $secondary-color;
+
+      & > div,
+      & > input {
+        background: $secondary-color;
+      }
+
+      li:hover {
+        background-color: darken($secondary-color, 20%);
+      }
+    }
+
+    &:nth-child(3) {
+      background: $tertiary-color;
+
+      & > div,
+      & > input {
+        background: $tertiary-color;
+      }
+
+      li:hover {
+        background-color: darken($tertiary-color, 20%);
+      }
+    }
+
+    span {
+      position: absolute;
+      display: block;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.5rem;
+      color: #fff;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .filters-all {
+    width: 100%;
+    position: absolute;
+    z-index: 5;
+    left: 0;
+    top: 65px;
+    border-radius: 0 0 5px 5px;
+    padding: 10px;
+    display: none;
+
+    ul {
+      display: flex;
+      width: 100%;
+      flex-wrap: wrap;
+    }
+  }
+
+  li {
+    margin-bottom: 5px;
+    padding: 5px 10px;
+    transition: background-color 0.3s;
+    border-radius: 15px;
+  }
+
+  a {
+    display: block;
+    width: 120px;
+    height: 100%;
+  }
+}
+
+.filter-tag {
+  color: #fff;
+}
+
+.filters-all.open {
+  display: block;
+}
+
+.labels {
+  margin-bottom: 15px;
+  display: flex;
+  flex-wrap: wrap;
+
+  button {
+    border: none;
+    color: #fff;
+    font-weight: 500;
+    font-size: 1rem;
+    border-radius: 5px;
+    padding: 8px 20px;
+    margin: 0 10px 10px 0;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    span {
+      margin-left: 10px;
+    }
+  }
+}
+
+.label.ing {
+  background: $primary-color;
+}
+
+.label.app {
+  background: $secondary-color;
+}
+
+.label.ust {
+  background: $tertiary-color;
 }

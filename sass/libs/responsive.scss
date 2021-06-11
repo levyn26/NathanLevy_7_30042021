@@ -18,8 +18,8 @@
     }
     .cards{
         width: 100%!important;
-        height: 110%!important;
-
+        height: 100%!important;
+        padding: 0!important;
     }
 
     input, button {
@@ -31,9 +31,17 @@
     }
 
     main{
-        grid-template-columns: 1fr!important;
+        grid-template-columns: 1fr !important;
         grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr!important;
-        gap: 55px 30px!important;
+        gap: 20px 30px!important;
+    }
+
+    .description {
+        padding-top: 1vh;
+        margin: 0!important;
+        font-size: 12px;
+        position: initial!important;
+        width: 35vh!important;
     }
  }
 

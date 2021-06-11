@@ -1,12 +1,16 @@
 
+
 function generateCards(title, time, ingredients, desc) {
+
+    // console.log(ingredients);
+
 
     const cards = document.createElement("div");
 
     cards.classList.add("cards");
 
     cards.innerHTML = `
-    <img src="./assets/img.jpg" alt="images">
+    <div class="imgHere"></div>
     <div class="titleAndTime">
         <p class="cardsTitle">${title}</p>
         <div class="time">
@@ -25,24 +29,37 @@ function generateCards(title, time, ingredients, desc) {
 
     ingredientEl.className = 'ingredientsWithDesc';
 
+    const ingredient = document.createElement('div');
+
+    ingredient.className = 'ingredientsOnly';
+
+    ingredient.appendChild(ingredientEl);
+
+
+
     const listOfClass = ['ingredient', 'quantity', 'unit'];
     const elType = ['strong', 'span', 'span'];
 
-    for (let oneIngredient of ingredients ){
+
+
+    for (let oneIngredient of ingredients) {
+
+        
+
 
         let list = 0
 
-        for (let prop in oneIngredient){
+        for (let prop in oneIngredient) {
             const propIngredient = document.createElement(elType[list]);
 
             propIngredient.textContent = oneIngredient[prop];
             propIngredient.className = listOfClass[list++];
-        
+
 
             ingredientEl.appendChild(propIngredient);
 
         }
-        
+
         ingredientEl.appendChild(document.createElement('br'))
 
     }
@@ -55,9 +72,12 @@ function generateCards(title, time, ingredients, desc) {
 
     cards.appendChild(ingredientEl);
 
- 
+
 
     return cards
 }
+
+
+
 
 export { generateCards };
