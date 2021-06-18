@@ -105,11 +105,11 @@ body {
 }
 
 :root {
-  --rad: .7rem;
-  --dur: .3s;
+  --rad: 0.7rem;
+  --dur: 0.3s;
   --color-dark: #2f2f2f;
-  --color-light: #E7E7E7;
-  --color-brand: #E7E7E7;
+  --color-light: #e7e7e7;
+  --color-brand: #e7e7e7;
   --font-fam: "Lato", sans-serif;
   --height: 4.5rem;
   --btn-width: 6rem;
@@ -125,7 +125,8 @@ form {
   margin: auto;
 }
 
-input, button {
+input,
+button {
   height: var(--height);
   font-family: var(--font-fam);
   border: 0;
@@ -183,7 +184,7 @@ label {
   width: 170px;
   height: 69px;
   border-radius: 5px;
-  background-color: #3282F7;
+  background-color: #3282f7;
   display: flex;
 }
 .ingredients:hover {
@@ -198,7 +199,7 @@ label {
   width: 170px;
   height: 69px;
   border-radius: 5px;
-  background-color: #68D9A4;
+  background-color: #68d9a4;
   display: flex;
 }
 .appareil:hover {
@@ -213,7 +214,7 @@ label {
   width: 170px;
   height: 69px;
   border-radius: 5px;
-  background-color: #ED6454;
+  background-color: #ed6454;
   display: flex;
 }
 .ustensiles:hover {
@@ -227,7 +228,7 @@ label {
   width: 170px;
   height: 69px;
   border-radius: 5px;
-  background-color: #3282F7;
+  background-color: #3282f7;
   display: flex;
 }
 .ingredients:hover {
@@ -239,7 +240,7 @@ label {
   position: absolute;
   width: 43%;
   height: 345px;
-  background-color: #3282F7;
+  background-color: #3282f7;
   top: 30vh;
   z-index: 99999;
 }
@@ -251,7 +252,7 @@ label {
 .filterText {
   font-weight: 500;
   font-size: 18px;
-  color: #FFFFFF;
+  color: #ffffff;
   margin: auto;
 }
 
@@ -268,7 +269,7 @@ main {
 }
 
 .cards {
-  background: #E7E7E7;
+  background: #e7e7e7;
   border-radius: 5px;
   padding-bottom: 3vh;
 }
@@ -278,7 +279,7 @@ main {
 }
 
 .imgHere {
-  background: #C7BEBE;
+  background: #c7bebe;
   border-radius: 5px 5px 0px 0px;
   height: 178px;
 }
@@ -431,6 +432,7 @@ main {
   display: block;
   width: 120px;
   height: 100%;
+  cursor: pointer;
 }
 
 .filter-tag {

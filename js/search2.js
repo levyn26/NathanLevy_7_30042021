@@ -180,33 +180,55 @@ const ustStatus = document.querySelector(".ust-status");
 
 function ingredientsFilter() {
 
-    //for ingredient
 
-    for (let ingredientsRecipes of recipes.recipes) {
+    let mySet = new Set()
 
-        for (let ingredients of ingredientsRecipes.ingredients) {
+    const ingredientsArray = recipes.recipes.map(listOfPlates => listOfPlates.ingredients)
+    for (let ingArr of ingredientsArray)
+        mySet.add(...ingArr.map(ingredient => ingredient.ingredient.slice(0, -3)))
 
 
-            const ingFilterUl = document.getElementById("ing-filter-list");
+    const ingFilterUl = document.getElementById("ing-filter-list");
 
-            ingFilterUl.appendChild(generateIngredients(ingredients.ingredient.slice(0, -2)));
+
+    let listOfIng = new Set();
+
+    for (let cur of mySet) {
+
+        let ingredientClick = generateIngredients(cur);
+
+        ingredientClick.onclick = (e) => {
+
+            clearCards()
+            searchIngredients(listOfIng, e.target.title, "ingredient")
+
+            if (listOfIng.size > 0) {
+                for (let cur of listOfIng) {
+                    main.appendChild(generateCards(cur.name, cur.time, cur.ingredients, cur.description));
+                }
+            }
 
         }
+
+        ingFilterUl.appendChild(ingredientClick);
+
     }
+
 
 }
 
 function appliancesFilter() {
 
-    //for ingredient
 
-    for (let applianceRecipes of recipes.recipes) {
+    const applianceArray = new Set(recipes.recipes.map(listOfPlates => listOfPlates.appliance))
 
-        console.log(applianceRecipes.appliance);
 
-        const appFilterUl = document.getElementById("app-filter-list");
+    const appFilterUl = document.getElementById("app-filter-list");
 
-        appFilterUl.appendChild(generateAppliance(applianceRecipes.appliance));
+
+    for (let cur of applianceArray) {
+
+        appFilterUl.appendChild(generateAppliance(cur));
 
     }
 
@@ -214,22 +236,20 @@ function appliancesFilter() {
 
 function ustensilsFilter() {
 
-    //for ingredient
+
+    let mySet = new Set()
+
+    const ustensilArray = recipes.recipes.map(listOfPlates => listOfPlates.ustensils)
+    for (let ustArr of ustensilArray)
+        mySet.add(...ustArr)
 
 
-    for (let ustensilsRecipes of recipes.recipes) {
-
-        for (let ustensils of ustensilsRecipes.ustensils) {
+    const ustFilterUl = document.getElementById("ust-filter-list");
 
 
-            console.log(ustensils);
+    for (let cur of mySet) {
 
-            const ustFilterUl = document.getElementById("ust-filter-list");
-
-            ustFilterUl.appendChild(generateUstensils(ustensils.toLowerCase().trim()));
-
-
-        }
+        ustFilterUl.appendChild(generateUstensils(cur));
 
     }
 
@@ -241,6 +261,11 @@ ingFilter.addEventListener('click', openIngredientsFilter => {
     ingFilter.classList.toggle("scaled");
     ingStatus.classList.toggle("open");
     ingArrow.style.transform = "translateY(-50%) rotate(180deg)";
+
+    const ingFilterUl = document.getElementById("ing-filter-list");
+
+    ingFilterUl.textContent = '';
+
     ingredientsFilter();
 
     ingFilter.addEventListener('click', openIngredientsFilter => {

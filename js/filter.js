@@ -9,36 +9,38 @@ const ustFilter = document.getElementById('filters-elt-ust');
 
 function generateIngredients(ing) {
 
-    const ingFilterUl = document.getElementById("ing-filter-list");
 
-    // console.log(ingFilterUl);
+    const ingLi = document.createElement("li");
+    const ingA = document.createElement("a");
+
+    ingLi.style.display = "block";
+    ingA.classList.add("filter-tag");
+    ingA.title = ing;
+
+    ingA.textContent = ing;
+
+    ingLi.appendChild(ingA);
 
 
-    ingFilterUl.innerHTML = `
-    <li style="display: block;">
-        <a class="filter-tag" href="/" title=${ing}>
-            ${ing}
-        </a>
-    </li>`
-
-
-
+    return ingLi
 }
 
 
 function generateAppliance(app) {
 
-    const appFilterUl = document.getElementById("app-filter-list");
+    const appLi = document.createElement("li");
+    const appA = document.createElement("a");
 
-    // console.log(appFilterUl);
+    appLi.style.display = "block";
+    appA.classList.add("filter-tag");
+    appA.title = app;
+
+    appA.textContent = app;
+
+    appLi.appendChild(appA);
 
 
-    appFilterUl.innerHTML = `
-    <li style="display: block;">
-        <a class="filter-tag" href="/" title=${app}>
-            ${app}
-        </a>
-    </li>`
+    return appLi
 
 
 
@@ -47,19 +49,19 @@ function generateAppliance(app) {
 
 function generateUstensils(ust) {
 
-    const ustFilterUl = document.getElementById("ust-filter-list");
+    const ustLi = document.createElement("li");
+    const ustA = document.createElement("a");
 
-    // console.log(appFilterUl);
+    ustLi.style.display = "block";
+    ustA.classList.add("filter-tag");
+    ustA.title = ust;
+
+    ustA.textContent = ust;
+
+    ustLi.appendChild(ustA);
 
 
-    ustFilterUl.innerHTML = `
-    <li style="display: block;">
-        <a class="filter-tag" href="/" title=${ust}>
-            ${ust}
-        </a>
-    </li>`
-
-
+    return ustLi
 
 }
 

@@ -1,5 +1,5 @@
-@import './libs/reset.scss';
-@import './libs/responsive.scss';
+@import "./libs/reset.scss";
+@import "./libs/responsive.scss";
 
 $light-grey: #e7e7e7;
 $dark-grey: #c7bebe;
@@ -8,40 +8,38 @@ $primary-color: #3282f7;
 $secondary-color: #68d9a4;
 $tertiary-color: #ed6454;
 
-
-.header{
-    text-align: center;
+.header {
+  text-align: center;
 }
 
-body{
-    padding: 3vh 100px;
-    font-family: 'Lato', sans-serif;;
+body {
+  padding: 3vh 100px;
+  font-family: "Lato", sans-serif;
 }
-
-
 
 :root {
-  --rad: .7rem;
-  --dur: .3s;
+  --rad: 0.7rem;
+  --dur: 0.3s;
   --color-dark: #2f2f2f;
-  --color-light: #E7E7E7;
-  --color-brand: #E7E7E7;
-  --font-fam: 'Lato', sans-serif;
+  --color-light: #e7e7e7;
+  --color-brand: #e7e7e7;
+  --font-fam: "Lato", sans-serif;
   --height: 4.5rem;
   --btn-width: 6rem;
   --bez: cubic-bezier(0, 0, 0.43, 1.49);
 }
 
-  // Main styles
+// Main styles
 form {
-  margin-top: 2vh!important;
+  margin-top: 2vh !important;
   position: relative;
   width: 100%;
   background: var(--color-brand);
   border-radius: var(--rad);
   margin: auto;
 }
-input, button {
+input,
+button {
   height: var(--height);
   font-family: var(--font-fam);
   border: 0;
@@ -87,152 +85,149 @@ label {
   overflow: hidden;
 }
 
-
-.ingredients{
+.ingredients {
   cursor: pointer;
   margin-right: 1.5vh;
   margin-top: 1.5vh;
-  transition: .1s ease-in-out;
+  transition: 0.1s ease-in-out;
   width: 170px;
   height: 69px;
   border-radius: 5px;
-  background-color: #3282F7;
+  background-color: #3282f7;
   display: flex;
-  &:hover{
-    opacity: .8;
+  &:hover {
+    opacity: 0.8;
   }
 }
 
-.appareil{
+.appareil {
   cursor: pointer;
   margin-right: 2vh;
   margin-top: 1.5vh;
-  transition: .1s ease-in-out;
+  transition: 0.1s ease-in-out;
   width: 170px;
   height: 69px;
   border-radius: 5px;
-  background-color: #68D9A4;
+  background-color: #68d9a4;
   display: flex;
-  &:hover{
-    opacity: .8;
+  &:hover {
+    opacity: 0.8;
   }
 }
 
-.ustensiles{
+.ustensiles {
   cursor: pointer;
   margin-right: 2vh;
   margin-top: 1.5vh;
-  transition: .1s ease-in-out;
+  transition: 0.1s ease-in-out;
   width: 170px;
   height: 69px;
   border-radius: 5px;
-  background-color: #ED6454;
-;
+  background-color: #ed6454;
   display: flex;
-  &:hover{
-    opacity: .8;
+  &:hover {
+    opacity: 0.8;
   }
 }
 
-.ingredients{
+.ingredients {
   margin-right: 2vh;
   margin-top: 1.5vh;
-  transition: .1s ease-in-out;
+  transition: 0.1s ease-in-out;
   width: 170px;
   height: 69px;
   border-radius: 5px;
-  background-color: #3282F7;
+  background-color: #3282f7;
   display: flex;
-  &:hover{
-    opacity: .8;
+  &:hover {
+    opacity: 0.8;
   }
 }
 
-.openIngredients{
+.openIngredients {
   display: none;
   position: absolute;
   width: 43%;
   height: 345px;
-  background-color: #3282F7;
+  background-color: #3282f7;
   top: 30vh;
   z-index: 99999;
 }
 
-.filter{
+.filter {
   display: flex;
 }
 
-.filterText{
+.filterText {
   font-weight: 500;
   font-size: 18px;
-  color: #FFFFFF;
+  color: #ffffff;
   margin: auto;
 }
 
-.filterIcon{
+.filterIcon {
   margin: auto;
 }
 
-main{
-  margin-top: 3vh ;
+main {
+  margin-top: 3vh;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   gap: 30px 30px;
 }
 
-.cards{
-  background: #E7E7E7;
+.cards {
+  background: #e7e7e7;
   border-radius: 5px;
   padding-bottom: 3vh;
 }
 
-.cards img{
+.cards img {
   border-radius: 5px 5px 0px 0px;
 }
 
-.imgHere{
-  background: #C7BEBE;
+.imgHere {
+  background: #c7bebe;
   border-radius: 5px 5px 0px 0px;
   height: 178px;
 }
 
-.titleAndTime{
+.titleAndTime {
   display: flex;
   margin: auto;
   padding: 2vh;
   justify-content: space-between;
 }
 
-.cardsTitle{
+.cardsTitle {
   font-size: 18px;
   font-weight: 400;
 }
 
-.time{
+.time {
   display: flex;
 }
 
-.timeTitle{
-  margin-left: .5vh;
+.timeTitle {
+  margin-left: 0.5vh;
   font-size: 18px;
   font-weight: 500;
-
 }
 
-.ingredientsWithDesc{
-  padding: .1vh 2vh;
+.ingredientsWithDesc {
+  padding: 0.1vh 2vh;
   position: relative;
 }
 
-.ingredientsList{
+.ingredientsList {
   font-size: 12px;
   line-height: 14px;
   color: #000;
   width: 171px;
 }
 
-.description{
+.description {
   margin-left: 1.5vh;
   font-size: 12px;
   position: absolute;
@@ -241,12 +236,8 @@ main{
   width: 171px;
 }
 
-
-
 .filters {
-
   background-color: transparent;
-
 
   &-elt {
     display: inline-block;
@@ -372,6 +363,7 @@ main{
     display: block;
     width: 120px;
     height: 100%;
+    cursor: pointer;
   }
 }
 

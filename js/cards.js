@@ -2,7 +2,6 @@
 
 function generateCards(title, time, ingredients, desc) {
 
-    // console.log(ingredients);
 
 
     const cards = document.createElement("div");
@@ -43,8 +42,6 @@ function generateCards(title, time, ingredients, desc) {
 
 
     for (let oneIngredient of ingredients) {
-
-        
 
 
         let list = 0
