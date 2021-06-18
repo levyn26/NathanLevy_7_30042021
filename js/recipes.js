@@ -96,7 +96,7 @@ const recipes = [
                 "quantity": 1
             },
             {
-                "ingredient": "Huile d'olive"
+                "ingredient": "Huile d'olive : "
             }
         ],
         "time": 80,
@@ -313,7 +313,7 @@ const recipes = [
                 "ingredient": "Vinaigre Balsamic"
             },
             {
-                "ingredient": "Huile d'olive"
+                "ingredient": " : "
             },
             {
                 "ingredient": "Basilic"
@@ -1012,7 +1012,7 @@ const recipes = [
                 "quantity": 2
             },
             {
-                "ingredient": "Huile d'olive"
+                "ingredient": "Huile d'olive :"
             },
             {
                 "ingredient": "Paprika"
@@ -1174,7 +1174,7 @@ const recipes = [
                 "unit": "cl"
             },
             {
-                "ingredient": "Huile d'olive"
+                "ingredient": "Huile d'olive : "
             },
             {
                 "ingredient": "Orange : ",
